@@ -14,7 +14,7 @@ st.image('logo.png', width=300)
 st.title("Fire Detection App")
 
 model = st.radio("Choose Model", 
-                 ("Traditional Computer Vision", "Vision LLMs", "Object Detection")
+                 ("Vision LLMs", "Object Detection")
                  )
 
 # File uploader for uploading an image
@@ -22,31 +22,31 @@ uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png
 
 if uploaded_file is not None:
 
-    if model == "Traditional Computer Vision": 
+    # if model == "Traditional Computer Vision": 
         
-        with st.spinner('Processing...'):
+    #     with st.spinner('Processing...'):
 
-            # Convert the uploaded file to an OpenCV image
-            image = np.array(Image.open(uploaded_file))
-            image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+    #         # Convert the uploaded file to an OpenCV image
+    #         image = np.array(Image.open(uploaded_file))
+    #         image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
 
-            # Run fire detection
-            fire_mask = detect_fire(image)
-            fire_present = classify_fire_presence(fire_mask)
+    #         # Run fire detection
+    #         fire_mask = detect_fire(image)
+    #         fire_present = classify_fire_presence(fire_mask)
 
-            # Display the uploaded image
-            st.image(uploaded_file, caption="Uploaded Image", use_column_width=True)
+    #         # Display the uploaded image
+    #         st.image(uploaded_file, caption="Uploaded Image", use_column_width=True)
 
-            # Display fire detection result
-            if fire_present:
-                st.error("🔥 Fire Detected!")
-            else:
-                st.success("✅ No Fire Detected.")
+    #         # Display fire detection result
+    #         if fire_present:
+    #             st.error("🔥 Fire Detected!")
+    #         else:
+    #             st.success("✅ No Fire Detected.")
 
-            # Display the fire mask
-            st.image(fire_mask, caption="Fire Mask", use_column_width=True, clamp=True)
+    #         # Display the fire mask
+    #         st.image(fire_mask, caption="Fire Mask", use_column_width=True, clamp=True)
     
-    elif model == "Vision LLMs":
+    if model == "Vision LLMs":
 
         genai.configure(api_key=os.environ["GEMINI_API_KEY"])
 
