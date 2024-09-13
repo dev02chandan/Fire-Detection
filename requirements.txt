@@ -5,4 +5,4 @@ IPython
 streamlit 
 google_generativeai
 ultralytics
-lap
+lapx
