@@ -85,7 +85,7 @@ if uploaded_file is not None:
         augment = False 
         run_dir = "runs/temp"
         os.makedirs(run_dir, exist_ok=True)
-        selected_model = 'FnS datav1 40epochs.pt'
+        selected_model = 'yolov8n datav1 40epochs.pt'
 
         if "tracked_objects" not in st.session_state:
             st.session_state["tracked_objects"] = defaultdict(lambda: defaultdict(int))
