@@ -1,7 +1,7 @@
-from func1 import detect_fire, classify_fire_presence
+# from func1 import detect_fire, classify_fire_presence
 import streamlit as st
-import cv2
-import numpy as np
+# import cv2
+# import numpy as np
 from PIL import Image
 import google.generativeai as genai
 import os
