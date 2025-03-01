@@ -10,7 +10,6 @@ import torch
 from collections import defaultdict
 import tempfile
 
-st.image('logo.png', width=300)
 st.title("Fire Detection App")
 
 model = st.radio("Choose Model", 
